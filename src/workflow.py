@@ -86,11 +86,3 @@ if categorical_features:
     sns.heatmap(X_encoded.values[:,1], annot=True, cmap='Oranges')
     plt.title('Correlation Heatmap')
     plt.show()
-```
-This script first loads the Iris dataset from scikit-learn and separates it into features (X) and the target variable (y). It then identifies the column types (categorical or numerical) for each feature using scikit-learn's AutomaticFeatureIdentification.
-
-Next, it handles missing values by using scikit-learn's SimpleImputer to fill in the missing values with the mean of the corresponding features. Then, it scales the numerical features using scikit-learn's StandardScaler, and encodes the categorical features using scikit-learn's OneHotEncoder.
-
-After combining the preprocessing steps, the script creates a scikit-learn Pipeline that first applies the preprocessing steps and then trains a Random Forest Classifier model. It then splits the data into training (80%) and testing (20%) sets using scikit-learn's train_test_split function, fits the trained pipeline on the training data, and evaluates the model on the testing data.
-
-Finally, it reports evaluation metrics for classification problems (Accuracy, Precision, Recall, F1-Score, and Confusion Matrix) and generates relevant plots to visualize the distribution of the target variable, as well as a correlation heatmap for the categorical features.
